@@ -44,6 +44,8 @@ if (!String.prototype.format) {
     };
 }
 
+
+
 //complementary functions to convert rgb to hex colors
 function _hex(x) {
     var hexDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
@@ -257,7 +259,9 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
     var _this = this;
 
     //query definintion for arcgis server service
-    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/applications/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
+    //production wrs segments
+//    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/applications/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
+    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/testing/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
     //only return results that intersect the project bounds
     this._wrsQuery.intersects(innerBoundsLayer);
 
@@ -300,19 +304,21 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
     //update layer, called on this object instantiation an at five minute intervals later
     this._updateLayer = function () {
         _this._wrsQuery.run(function (error, featureCollection, response) {
-            for (var i = 0; i < featureCollection.features.length; i++) {
-                var featProps = featureCollection.features[i].properties;
-                for (var key in featProps) {
-                    var substringStartPosition = key.lastIndexOf('.');
-                    substringStartPosition = (substringStartPosition >= 0 ? substringStartPosition + 1 : 0);
-                    featProps[key.substring(substringStartPosition, key.length)] = featProps[key];
-                    delete featProps[key];
+            //test for defined featureCollection response before proceeding
+            if (featureCollection) {
+                for (var i = 0; i < featureCollection.features.length; i++) {
+                    var featProps = featureCollection.features[i].properties;
+                    for (var key in featProps) {
+                        var substringStartPosition = key.lastIndexOf('.');
+                        substringStartPosition = (substringStartPosition >= 0 ? substringStartPosition + 1 : 0);
+                        featProps[key.substring(substringStartPosition, key.length)] = featProps[key];
+                        delete featProps[key];
+                    }
                 }
+
+                _this.leafletLayer.clearLayers();
+                _this.leafletLayer.addData(featureCollection);
             }
-
-            _this.leafletLayer.clearLayers();
-            _this.leafletLayer.addData(featureCollection);
-
         });
     };
 
@@ -340,7 +346,6 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
 
     //update at regular five minute intervals
     setInterval(this._updateLayer, 5 * 60 * 1000);
-
 }
 
 //style lookup for style name to dashArray properties
