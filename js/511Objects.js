@@ -688,9 +688,11 @@ function EditorApp(appConfigObj) {
 
     var $showPanelButton = $("#show-panel-button");
     var $mapInsetDiv = $('.map-inset-div');
+    var $hidePanelButton = $('#hide-panel-button');
 
     this.startInsetMaxHeight = $mapInsetDiv.css('height');
     this.startIndexWidth = $mapInsetDiv.css('width');
+    var animateDuration = 250;
 
     //show legend or accordion panel, hide show panel button on finish
     $showPanelButton.button({
@@ -699,33 +701,37 @@ function EditorApp(appConfigObj) {
         },
         text: false
     }).hide().click(function () {
+        $showPanelButton.hide();
         $mapInsetDiv.show();
         $mapInsetDiv.animate({height: _this.startInsetMaxHeight, width: _this.startIndexWidth},
-            200,
+            animateDuration,
             function () {
-                $showPanelButton.hide();
+                $hidePanelButton.prop('disabled', false);
             }
         );
     });
 
     //hide legend or accordion panel, display show panel button on finish
-    $('#hide-panel-button').button({
+    $hidePanelButton.button({
         icons: {
             primary: "ui-icon-arrowthick-1-ne"
         },
         text: false
     }).click(function () {
+        $hidePanelButton.prop('disabled', true);
         _this.startInsetMaxHeight = $mapInsetDiv.css('height');
         _this.startIndexWidth = $mapInsetDiv.css('width');
-        $mapInsetDiv.animate({height: 0, width: 0}, 300, function () {
-            $mapInsetDiv.hide();
-            $showPanelButton.show();
-        });
+        $mapInsetDiv.animate({height: 0, width: 0},
+            animateDuration,
+            function () {
+                $mapInsetDiv.hide();
+                $showPanelButton.show();
+            });
     });
 
 
     //keep events from propagating to the leaflet map parent container
-    $mapInsetDiv.dblclick(function (event) {
+    $('.map-inset-div, #show-panel-button').dblclick(function (event) {
         event.stopPropagation();
     }).mousedown(function (event) {
         event.stopPropagation();
