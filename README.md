@@ -18,8 +18,8 @@ There are four configuration parameters at the application level.
   current travel speed segments, and winter road conditions segments.  
 
 Of note is that Leaflet has a peculiar way of organizing layers and features from the point of view of 
-a GIS dataset.  Within desktop GIS, a layer is thought of as a combination of a collection of features and 
-the style definition.  Howerver, Leaflet adds an additional tier.  A GeoJson "layer" is created from 
+a GIS data set.  Within desktop GIS, a layer is thought of as a combination of a collection of features and
+the style definition.  However, Leaflet adds an additional tier.  A GeoJson "layer" is created from
 geojson data.  However, this "layer" is really a layer group with each layer containing a single feature and
 style information.  Keep this in mind when reading comments as individual features are referred to as sublayers or
 features with these terms being synonymous.  
