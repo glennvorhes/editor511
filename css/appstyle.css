@@ -1,0 +1,119 @@
+
+.ui-dialog-content fieldset * {
+    margin: 4px;
+    padding: 4px;
+}
+
+.color {
+    font-size: 0 !important;
+    height: 12px;
+    width: 20px;
+    float: right;
+    margin: 1px 4px 1px 0;
+    cursor: crosshair;
+}
+
+.color:disabled {
+    cursor: default !important;
+}
+
+.map-inset-div {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 250px;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 4px;
+    border: solid darkgray 1px;
+    padding: 5px;
+    z-index: 99;
+    cursor: default;
+    max-height: 90%;
+    height: auto;
+}
+
+.map-inset-div > div {
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(240, 255, 255, 0.85);
+    clear: right;
+}
+
+#show-panel-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#hide-panel-button {
+    float: right;
+    /*display: block;*/
+}
+
+.daredevel-tree ul {
+    padding-left: 10px;
+    margin-left: 7px;
+}
+
+.ui-accordion-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 3px;
+}
+
+.ui-accordion-content ul > li {
+    height: 30px;
+    padding: 5px 0 0 5px;
+}
+
+.ui-accordion-content {
+    max-height: 200px;
+    min-height: 30px;
+    overflow: scroll;
+    padding: 2px !important;
+}
+
+.ui-widget-overlay {
+    opacity: 0.4;
+    z-index: 500;
+}
+
+li .ui-icon, h3 .ui-icon {
+    display: inline-block;
+    float: right;
+}
+
+.leaflet-top, .leaflet-bottom {
+    z-index: 300;
+}
+
+#flash-Message {
+    position: absolute;
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    font-size: 14px;
+    left: 30px;
+    bottom: 30px;
+    display: none;
+    z-index: 500;
+    background-color: rgba(173, 216, 230, 0.8);
+    border-radius: 4px;
+    border: solid darkgray 1px;
+}
+
+li hr, h3 hr {
+    width: 40px;
+    height: 4px;
+    margin-right: 10px;
+    float: right;
+    border: none;
+}
+
+.legend-icon {
+    float: right;
+    margin-right: 20px;
+}

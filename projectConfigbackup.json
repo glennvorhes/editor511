@@ -1,0 +1,594 @@
+{
+    "projectId": "a689e148-23e6-4323-86ef-d63b2056ad09",
+    "projectPointLocation": {
+        "lat": 43.03552114465,
+        "lng": -89.455318450928
+    },
+    "initialExtent": {
+        "center": [
+            43.032133291511,
+            -89.439868927002
+        ],
+        "zoom": 13
+    },
+    "bounds": {
+        "south": 43.008162026486,
+        "west": -89.503555297852,
+        "east": -89.410343170166,
+        "north": 43.051077772045
+    },
+    "showLayers": {
+        "incidents": false,
+        "laneClosures": false,
+        "futureLaneClosures": false,
+        "cameras": true,
+        "messageSigns": true,
+        "trafficSpeed": false,
+        "wrsSegments": true
+    },
+    "layers": [
+        {
+            "layerId": "19f63fcb-9d53-4d41-8d46-45512c0cca6e",
+            "layerName": "Project Extent",
+            "expand": false,
+            "groupColor": "#FFCF33",
+            "groupStyle": "solid",
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FFCF33",
+                            "legendShow": true,
+                            "name": "Extent",
+                            "featureId": "e8e70e92-84c4-4c8f-a1d0-6583e86f4a60",
+                            "opacity": 0.49,
+                            "lineWidth": 20,
+                            "lineStyle": "solid",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.452722072601,
+                                    43.036869960048
+                                ],
+                                [
+                                    -89.456734657288,
+                                    43.033889979448
+                                ],
+                                [
+                                    -89.460940361023,
+                                    43.031019650795
+                                ],
+                                [
+                                    -89.463794231415,
+                                    43.028682508101
+                                ],
+                                [
+                                    -89.466133117676,
+                                    43.026847239715
+                                ],
+                                [
+                                    -89.467763900757,
+                                    43.025215843974
+                                ],
+                                [
+                                    -89.468858242035,
+                                    43.023788337135
+                                ],
+                                [
+                                    -89.469845294952,
+                                    43.022266672417
+                                ],
+                                [
+                                    -89.471411705017,
+                                    43.019348735603
+                                ],
+                                [
+                                    -89.472312927246,
+                                    43.016917015659
+                                ],
+                                [
+                                    -89.472742080688,
+                                    43.015520694233
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "80003a9f-80da-47fb-922d-a5a9379ad881",
+            "layerName": "new group",
+            "expand": false,
+            "groupColor": "#FF6600",
+            "groupStyle": "dotted",
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF6600",
+                            "legendShow": true,
+                            "name": "detour 1",
+                            "featureId": "a29d3654-e136-49b4-8d49-cdc1a908746d",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": false,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.491195678711,
+                                    43.044178141867
+                                ],
+                                [
+                                    -89.460124969482,
+                                    43.038406946105
+                                ],
+                                [
+                                    -89.448623657227,
+                                    43.045558129989
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "c424f9c8-9a16-4128-bf4e-23ac63a44c2f",
+            "layerName": "group 2",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#1FFF3D",
+                            "legendShow": true,
+                            "name": "feature1",
+                            "featureId": "b6dc95a8-34cd-42ed-b241-58804d21b011",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "dashed"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.478492736816,
+                                    43.041418072493
+                                ],
+                                [
+                                    -89.439868927002,
+                                    43.022721607058
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#3A24FF",
+                            "legendShow": true,
+                            "name": "feature2",
+                            "featureId": "6e5b40c1-182f-440c-90de-8d6c1f20b539",
+                            "opacity": 0.99,
+                            "lineWidth": 20,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.471111297607,
+                                    43.031254928686
+                                ],
+                                [
+                                    -89.451370239258,
+                                    43.041292611844
+                                ],
+                                [
+                                    -89.441070556641,
+                                    43.021466606767
+                                ],
+                                [
+                                    -89.47093963623,
+                                    43.014312615246
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "587491a1-35db-403b-a89f-e9d87caeea5b",
+            "layerName": "Closures",
+            "expand": false,
+            "groupColor": "#FF0000",
+            "groupStyle": "dashed",
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF0000",
+                            "legendShow": true,
+                            "name": "close1",
+                            "featureId": "3ef82ccc-2f38-44a9-8b50-a9444c4e6fb1",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "lineStyle": "dashed",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.477548599243,
+                                    43.041355342201
+                                ],
+                                [
+                                    -89.47772026062,
+                                    43.036775857611
+                                ],
+                                [
+                                    -89.477205276489,
+                                    43.032886163927
+                                ],
+                                [
+                                    -89.477119445801,
+                                    43.03138040986
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF0000",
+                            "legendShow": true,
+                            "name": "close2",
+                            "featureId": "0ce551aa-c613-4107-afe6-e1e8a880395f",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "lineStyle": "dashed",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.422788619995,
+                                    43.034956515448
+                                ],
+                                [
+                                    -89.422960281372,
+                                    43.03175685184
+                                ],
+                                [
+                                    -89.425020217896,
+                                    43.02987461885
+                                ],
+                                [
+                                    -89.42587852478,
+                                    43.028243303567
+                                ],
+                                [
+                                    -89.425964355469,
+                                    43.026737435594
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "bb41e427-bf96-4c8f-8b49-5d9da05c839e",
+            "layerName": "Verona Rd Detours",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FFE84F",
+                            "legendShow": true,
+                            "name": "Whitney Way",
+                            "featureId": "c185e884-855f-4a3a-8410-059fff244f68",
+                            "opacity": 0.8,
+                            "lineWidth": 7,
+                            "lineStyle": "dashed",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.476733207703,
+                                    43.031882331987
+                                ],
+                                [
+                                    -89.476776123047,
+                                    43.030564777648
+                                ],
+                                [
+                                    -89.475960731506,
+                                    43.028745251349
+                                ],
+                                [
+                                    -89.475102424622,
+                                    43.02711390605
+                                ],
+                                [
+                                    -89.475317001343,
+                                    43.025357024165
+                                ],
+                                [
+                                    -89.475102424622,
+                                    43.024572685661
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#0022FF",
+                            "legendShow": true,
+                            "name": "Beltline",
+                            "featureId": "d0787573-5570-4ce2-b2e5-fa301f480cba",
+                            "opacity": 1,
+                            "lineWidth": 9,
+                            "lineStyle": "dashed",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.452743530273,
+                                    43.036932694927
+                                ],
+                                [
+                                    -89.450855255127,
+                                    43.035928929176
+                                ],
+                                [
+                                    -89.448194503784,
+                                    43.034987883873
+                                ],
+                                [
+                                    -89.445576667786,
+                                    43.034799673081
+                                ],
+                                [
+                                    -89.443645477295,
+                                    43.034893778549
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#C2FF66",
+                            "legendShow": true,
+                            "name": "Beltline Part 2",
+                            "featureId": "c66846a4-3cd7-45d4-83b8-c72be1391e7b",
+                            "opacity": 0.8,
+                            "lineWidth": 9,
+                            "lineStyle": "dotted",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.463129043579,
+                                    43.041543532886
+                                ],
+                                [
+                                    -89.459309577942,
+                                    43.039755698071
+                                ],
+                                [
+                                    -89.455404281616,
+                                    43.037999178046
+                                ],
+                                [
+                                    -89.453086853027,
+                                    43.037183633799
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "3b82c4e8-c5eb-406a-9535-2af6e377b1e5",
+            "layerName": "PD detours",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF1F8F",
+                            "legendShow": true,
+                            "name": "Seminole",
+                            "featureId": "8d38b522-c7f5-4a62-9134-bd79088366f6",
+                            "opacity": 0.68,
+                            "lineWidth": 7,
+                            "lineStyle": "dashed",
+                            "initialShow": false
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.455533027649,
+                                    43.015379491422
+                                ],
+                                [
+                                    -89.457249641418,
+                                    43.008507228903
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF6600",
+                            "legendShow": true,
+                            "name": "McKee",
+                            "featureId": "6c50e78a-d891-46d3-bd74-6ef9993dd58d",
+                            "opacity": 0.8,
+                            "lineWidth": 9,
+                            "lineStyle": "solid",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.471669197083,
+                                    43.015473626665
+                                ],
+                                [
+                                    -89.45544719696,
+                                    43.015505005048
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "d18abecf-8b7c-471b-b8f4-7a5fb6c68f61",
+            "layerName": "Seminole",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF6600",
+                            "legendShow": true,
+                            "name": "Nakoma",
+                            "featureId": "67690d02-e3a8-4847-b0bf-02829ddff1ff",
+                            "opacity": 0.51,
+                            "lineWidth": 20,
+                            "lineStyle": "solid",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.450640678406,
+                                    43.038846077907
+                                ],
+                                [
+                                    -89.443688392639,
+                                    43.043927231601
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#BCFF36",
+                            "legendShow": true,
+                            "name": "Midvale",
+                            "featureId": "ff09cd31-a71f-44c3-b6b0-64b2aea3479e",
+                            "opacity": 1,
+                            "lineWidth": 11,
+                            "lineStyle": "dashed",
+                            "initialShow": true
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.451112747192,
+                                    43.045432677806
+                                ],
+                                [
+                                    -89.451241493225,
+                                    43.038846077907
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#BB1CFF",
+                            "legendShow": true,
+                            "name": "adf",
+                            "featureId": "7b6db32d-eb53-41ce-a3d9-833f0f1865a4",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.488964080811,
+                                    43.041919912524
+                                ],
+                                [
+                                    -89.465103149414,
+                                    43.04781622541
+                                ],
+                                [
+                                    -89.465789794922,
+                                    43.03451735581
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

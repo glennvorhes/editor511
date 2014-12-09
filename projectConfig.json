@@ -1,0 +1,436 @@
+{
+    "projectId": "a689e148-23e6-4323-86ef-d63b2056ad09",
+    "projectPointLocation": {
+        "lat": 43.034140930762,
+        "lng": -89.456691741943
+    },
+    "initialExtent": {
+        "center": [
+            43.03138040986,
+            -89.444160461426
+        ],
+        "zoom": 13
+    },
+    "bounds": {
+        "south": 43.005651405086,
+        "west": -89.513854980469,
+        "east": -89.411716461182,
+        "north": 43.053335664273
+    },
+    "showLayers": {
+        "incidents": true,
+        "laneClosures": false,
+        "futureLaneClosures": false,
+        "cameras": true,
+        "messageSigns": true,
+        "trafficSpeed": false,
+        "wrsSegments": true
+    },
+    "layers": [
+        {
+            "layerId": "290026ba-ac7e-4b28-b052-57c4b61a7ecd",
+            "layerName": "Extent",
+            "expand": false,
+            "groupColor": "#FF7519",
+            "groupStyle": "solid",
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF7519",
+                            "legendShow": true,
+                            "name": "Extent",
+                            "featureId": "a1158708-c96d-4ac0-b4bb-793a1298f18f",
+                            "opacity": 0.57,
+                            "lineWidth": 20,
+                            "initialShow": true,
+                            "lineStyle": "solid"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.45240020752,
+                                    43.036650387469
+                                ],
+                                [
+                                    -89.460124969482,
+                                    43.031882331987
+                                ],
+                                [
+                                    -89.465618133545,
+                                    43.027992328137
+                                ],
+                                [
+                                    -89.469909667969,
+                                    43.021466606767
+                                ],
+                                [
+                                    -89.472827911377,
+                                    43.015567761764
+                                ],
+                                [
+                                    -89.477977752686,
+                                    43.008538610845
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "bba6de09-e444-4ec2-abbd-b0d1314dbe69",
+            "layerName": "Closures",
+            "expand": false,
+            "groupColor": "#FF0303",
+            "groupStyle": "dashed",
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF0303",
+                            "legendShow": true,
+                            "name": "closure1",
+                            "featureId": "17ab2d51-0d70-4b21-9eb5-523c679243ab",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "dashed"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.443988800049,
+                                    43.033889979448
+                                ],
+                                [
+                                    -89.447593688965,
+                                    43.027490374198
+                                ],
+                                [
+                                    -89.449825286865,
+                                    43.021215603631
+                                ],
+                                [
+                                    -89.45240020752,
+                                    43.019960572555
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF0303",
+                            "legendShow": true,
+                            "name": "closure2",
+                            "featureId": "297e35bb-2dca-47d4-bc41-eafd7527dd0d",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "dashed"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.427165985107,
+                                    43.035395671943
+                                ],
+                                [
+                                    -89.416351318359,
+                                    43.035395671943
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "47359456-9160-480c-9a24-198603f7dda6",
+            "layerName": "Verona Rd",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#3108FF",
+                            "legendShow": true,
+                            "name": "Raymond",
+                            "featureId": "5c4e13b7-1c96-4c86-a99e-ba1cb9d38578",
+                            "opacity": 0.85,
+                            "lineWidth": 7,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.47772026062,
+                                    43.031850961974
+                                ],
+                                [
+                                    -89.470167160034,
+                                    43.031976441928
+                                ],
+                                [
+                                    -89.462871551514,
+                                    43.031945071964
+                                ],
+                                [
+                                    -89.461283683777,
+                                    43.031098076859
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#8EFF1C",
+                            "legendShow": true,
+                            "name": "Whitney",
+                            "featureId": "3cb1e8ad-8c10-4dfb-bf74-f531c6f5bedd",
+                            "opacity": 0.92,
+                            "lineWidth": 15,
+                            "initialShow": false,
+                            "lineStyle": "dashed"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.47690486908,
+                                    43.031568631138
+                                ],
+                                [
+                                    -89.47690486908,
+                                    43.030125586583
+                                ],
+                                [
+                                    -89.475874900818,
+                                    43.028462906227
+                                ],
+                                [
+                                    -89.475145339966,
+                                    43.025921741683
+                                ],
+                                [
+                                    -89.475145339966,
+                                    43.02444719057
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF7A38",
+                            "legendShow": true,
+                            "name": "Williamsburg",
+                            "featureId": "1b73d42c-b042-4147-bef3-7a5b5ece0024",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "solid"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.475703239441,
+                                    43.024258947453
+                                ],
+                                [
+                                    -89.473986625671,
+                                    43.025011916458
+                                ],
+                                [
+                                    -89.470896720886,
+                                    43.024604059393
+                                ],
+                                [
+                                    -89.469566345215,
+                                    43.023788337135
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "d250314c-75d2-4e30-9935-f26d8956534f",
+            "layerName": "PD detour",
+            "expand": true,
+            "groupColor": null,
+            "groupStyle": null,
+            "startupShow": true,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#0F8FFF",
+                            "legendShow": false,
+                            "name": "Mckee",
+                            "featureId": "bc812970-cc90-42c9-a824-f3d5be7ed50d",
+                            "opacity": 1,
+                            "lineWidth": 12,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.45574760437,
+                                    43.015756031529
+                                ],
+                                [
+                                    -89.437808990479,
+                                    43.015630518417
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF6600",
+                            "legendShow": true,
+                            "name": "Seminole",
+                            "featureId": "50aff618-b2c3-49a7-be98-aff867059e57",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "solid"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.455146789551,
+                                    43.016383593244
+                                ],
+                                [
+                                    -89.455146789551,
+                                    43.019082035537
+                                ],
+                                [
+                                    -89.451627731323,
+                                    43.020713594279
+                                ],
+                                [
+                                    -89.448194503784,
+                                    43.022784356399
+                                ],
+                                [
+                                    -89.446477890015,
+                                    43.02987461885
+                                ],
+                                [
+                                    -89.445705413818,
+                                    43.030878483628
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "layerId": "0cc3d8b2-0b4f-43bf-8286-8e0529986f9d",
+            "layerName": "Putnam",
+            "expand": false,
+            "groupColor": "#FF7E29",
+            "groupStyle": "dotted",
+            "startupShow": false,
+            "layerGeoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF7E29",
+                            "legendShow": true,
+                            "name": "McKenna",
+                            "featureId": "7a2446ae-30d1-4695-9ed3-94a90a322772",
+                            "opacity": 0.8,
+                            "lineWidth": 11,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.501066207886,
+                                    43.023662840441
+                                ],
+                                [
+                                    -89.498920440674,
+                                    43.025168783838
+                                ],
+                                [
+                                    -89.496688842773,
+                                    43.02617272558
+                                ],
+                                [
+                                    -89.497032165527,
+                                    43.029937360879
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "color": "#FF7E29",
+                            "legendShow": true,
+                            "name": "Putnam Rd",
+                            "featureId": "32e9c097-36be-492e-9af7-9c76184783c3",
+                            "opacity": 0.8,
+                            "lineWidth": 5,
+                            "initialShow": true,
+                            "lineStyle": "dotted"
+                        },
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    -89.500379562378,
+                                    43.022909854889
+                                ],
+                                [
+                                    -89.494800567627,
+                                    43.022784356399
+                                ],
+                                [
+                                    -89.486646652222,
+                                    43.023349097584
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

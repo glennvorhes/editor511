@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="icon" type="image/png" href="docs/images/favicon.png" />-->
+
+    <link rel="stylesheet" href="js/leaflet/leaflet.css"/>
+    <!--use cdn for access to associated images-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css">
+
+    <link rel="stylesheet" href="js/leaflet/leaflet.draw.css"/>
+    <link rel="stylesheet" href="css/jquery.tree.min.css"/>
+    <link rel="stylesheet" href="css/appstyle.css"/>
+
+    <!--jQuery-->
+    <script src="js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script src="js/jquery/jscolor/jscolor.js"></script>
+    <script src="js/jquery/jquery.tree.min.js"></script>
+
+    <!--Leaflet and plugins-->
+    <script src="js/leaflet/leaflet.js"></script>
+    <script src="js/leaflet/leaflet.draw.js"></script>
+    <script src="js/leaflet/esri-leaflet.js"></script>
+
+    <!--Custom object definitions    -->
+    <script src="js/511Objects.js"></script>
+
+    <style>
+        #map {
+            height: 430px;
+            width: 900px;
+            margin: 30px;
+            position: relative;
+        }
+    </style>
+
+    <script>
+
+        var app;
+        var config = {
+            //handler to retrieve/set project configuration on server
+            ajaxHandler: 'handler.php',
+            //enable editor functionality by presence of editor url parameter
+            editor: window.location.href.search(/[?\&]editor/i) > -1,
+            // map div id
+            mapDivId: 'map',
+            //inventory resource url
+            inventoryResourceUrl: 'http://www.topslab.wisc.edu/its/inventory/api'
+        };
+
+        document.title = (config.editor ? "Feature Editor" : "Feature Viewer");
+
+
+        $(function () {
+
+            $switchLink = $('#switch-link');
+            $switchLink.html((config.editor ? "Switch To Viewer" : "Switch To Editor"));
+            $switchLink.attr('href', (config.editor ? "index.html" : "index.html?editor"));
+
+
+            var map = L.map(config.mapDivId, {minZoom: 5});
+            var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+            var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+            var osm = new L.TileLayer(osmUrl, {
+                        minZoom: 1,
+                        maxZoom: 19,
+                        attribution: osmAttrib}
+            );
+
+            map.addLayer(osm);
+            map.setView([45.0, -89.0], 6);
+            config['map'] = map;
+
+            //Configure the application
+            $.get(config.ajaxHandler, {}, function (data) {
+                config['projectConfig'] = data;
+                app = new EditorApp(config);
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+<a id="switch-link" href=""></a>
+<div id="map"></div>
+</body>
+</html>

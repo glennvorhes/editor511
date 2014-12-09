@@ -1,0 +1,30 @@
+{
+    "projectId": "a689e148-23e6-4323-86ef-d63b2056ad09",
+    "projectPointLocation": {
+        "lat": 44.8,
+        "lng": -90.0
+    },
+    "initialExtent": {
+        "center": [
+            44.83,
+            -91.52
+        ],
+        "zoom": 6
+    },
+    "bounds": {
+        "west": -93.23,
+        "east": -86.75,
+        "south": 42.38,
+        "north": 47.2
+    },
+    "showLayers": {
+        "incidents": true,
+        "laneClosures": true,
+        "futureLaneClosures": true,
+        "cameras": true,
+        "messageSigns": true,
+        "trafficSpeed": true,
+        "wrsSegments": true
+    },
+    "layers": []
+}
