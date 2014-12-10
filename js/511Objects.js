@@ -44,8 +44,6 @@ if (!String.prototype.format) {
     };
 }
 
-
-
 //complementary functions to convert rgb to hex colors
 function _hex(x) {
     var hexDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
@@ -85,11 +83,12 @@ function InventoryLayer(inventoryLayerProps) {
      expected properties are
      layerName: string
      rootGetUrl: string, location of api currently at http://www.topslab.wisc.edu/its/inventory/api but will be moved
-     getParams: object
+     getParams: object [
      L: float, min longitude
      R: float, max longitude
      B: float, min latitude
      T: float, max latitude
+     }
      resource: string, resource defined by topslab api
      popupTemplate: string, html markup with string replacement placeholders
      ie '<p>Description: {0}<br/>Detour: {1}<br/>Start: {2}<br/>End: {3}</p>'
@@ -305,13 +304,14 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
     this._updateLayer = function () {
         _this._wrsQuery.run(function (error, featureCollection, response) {
             //test for defined featureCollection response before proceeding
-            if (featureCollection) {
+            if (featureCollection && response) {
+                var fieldAliases = response['fieldAliases'];
+
+                //reference the feature properties by the ArcGIS Server mapservice field alias name
                 for (var i = 0; i < featureCollection.features.length; i++) {
                     var featProps = featureCollection.features[i].properties;
                     for (var key in featProps) {
-                        var substringStartPosition = key.lastIndexOf('.');
-                        substringStartPosition = (substringStartPosition >= 0 ? substringStartPosition + 1 : 0);
-                        featProps[key.substring(substringStartPosition, key.length)] = featProps[key];
+                        featProps[fieldAliases[key]] = featProps[key];
                         delete featProps[key];
                     }
                 }
