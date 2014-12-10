@@ -259,8 +259,9 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
 
     //query definintion for arcgis server service
     //production wrs segments
-//    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/applications/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
-    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/testing/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
+    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/applications/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
+    //testing wrs segments
+//    this._wrsQuery = new L.esri.Tasks.Query('http://transportal.cee.wisc.edu/testing/arcgis2/rest/services/WRS/WRS_CurrentConditions/MapServer/0');
     //only return results that intersect the project bounds
     this._wrsQuery.intersects(innerBoundsLayer);
 
