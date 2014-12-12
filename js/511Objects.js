@@ -328,7 +328,7 @@ function WrsSegments(innerBoundsLayer, defaultOn) {
 
         var wrsLegendMarkup =
             '<li class="collapsed"><input id="wrsSegments" type="checkbox" {0}>'.format((defaultOn ? 'checked' : '')) +
-            '<label for="wrsSegments">Winter Roads Condition</label>';
+            '<label for="wrsSegments">Winter Roads</label>';
 
         wrsLegendMarkup += '<img src="{0}" height=15 class="legend-icon">'.format('icons/snow-report.png');
         wrsLegendMarkup += '<ul>';
@@ -1813,13 +1813,18 @@ function EditorApp(appConfigObj) {
         //jQuery ref to legend list
         var legendList = $('#legend-list');
 
+        //initialize content for inventory, incidents, lane closures, speed, and winter roads segments
+        var inventoryContent = '<li class="legend-header"><p class="legend-header-content">' +
+            'WI 511 Real-time Traveler Information</p><ul>';
+
         //Add the inventory layers that are set to display on startup and add items to the legend
         for (i = 0; i < _this.arrInventoryIncidentLayers.length; i++) {
             if (_this.arrInventoryIncidentLayers[i].startupShow) {
                 _this.map.addLayer(_this.arrInventoryIncidentLayers[i].leafletGeoJsonLayer);
             }
-            legendList.append(_this.arrInventoryIncidentLayers[i].makeLegendHtml());
+            inventoryContent += _this.arrInventoryIncidentLayers[i].makeLegendHtml();
         }
+
 
         //Add the wrs segments between October and May, note that January is month 0 in JavaScript
         var d = new Date();
@@ -1834,7 +1839,7 @@ function EditorApp(appConfigObj) {
             }
 
             //append the markup to the legend
-            legendList.append(wrsSegments.makeLegendHtml());
+            inventoryContent += wrsSegments.makeLegendHtml()
 
             //add event handler to show and hid the layer on checkbox change
             $('#wrsSegments').change(function (e) {
@@ -1845,6 +1850,15 @@ function EditorApp(appConfigObj) {
                 }
             });
         }
+
+        //end the li wrapper for inventory content
+        inventoryContent += '</ul></li>';
+        legendList.append(inventoryContent);
+
+        //initialize content for inventory, incidents, lane closures, speed, and winter roads segments
+        var project511LayerContent = '<li class="legend-header"><p class="legend-header-content">' +
+            'WI 511 Construction Project Information</p><ul>';
+
 
         /*loop over layer groups and sub layers for digitized features from the editor
          add to the map those for which the group and the individual feature are
@@ -1859,8 +1873,12 @@ function EditorApp(appConfigObj) {
                 }
             }
             //Add the legend html
-            legendList.append(theLayer.makeLegendHtml());
+            project511LayerContent += theLayer.makeLegendHtml()
         }
+
+        //end the li wrapper for project content
+        project511LayerContent += '</ul></li>';
+        legendList.append(project511LayerContent);
 
         //initialize the checkbox tree
         $('#legend-tree').tree({});

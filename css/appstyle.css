@@ -117,3 +117,18 @@ li hr, h3 hr {
     float: right;
     margin-right: 20px;
 }
+
+.legend-header-content{
+    margin:0 5px 3px 0;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 51, 153, 0.7);
+    padding: 2px 7px 0 7px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+#legend-list{
+    margin: 5px 0 7px 5px;
+}
