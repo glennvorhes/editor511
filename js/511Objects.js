@@ -1503,6 +1503,16 @@ function EditorApp(appConfigObj) {
          */
         this.map.addLayer(this.editableFeatures);
 
+        //create an empty layer to hold feature selections, on editor panel click
+        this.featureSelectionLayer = L.geoJson(null, {
+            style: {
+                color: '#FF8200',
+                opacity: 0.5,
+                weight: 9,
+                lineCap: 'butt'
+            }
+        }).addTo(this.map);
+
         //handle draw created events
         this.map.on('draw:created', function (e) {
             switch (e.layerType) {
@@ -1545,6 +1555,18 @@ function EditorApp(appConfigObj) {
                     alert('not handled');
             }
         });
+
+        var clearSelectionOnDrawStartOrModify = function(e){
+            //clear selection
+            _this.featureSelectionLayer.clearLayers();
+
+            //remove selection flag from any li elements
+            $('.feature-selection-li').removeClass('feature-selection-li');
+        };
+
+        this.map.on('draw:drawstart', clearSelectionOnDrawStartOrModify);
+        this.map.on('draw:editstart', clearSelectionOnDrawStartOrModify);
+
 
         /*create the draw controls*/
 
@@ -1624,7 +1646,7 @@ function EditorApp(appConfigObj) {
             var $layerSortLi = $(".layer-sort li");
 
             //Create the functions on the first call to updateEventListeners as functions are yet undefined
-            if (!(this._subLayersDblClick && this._accordionh3click)) {
+            if (!(this._subLayersDblClick && this._accordionh3click && this._subLayersClick)) {
 
                 this._subLayersDblClick = function (event) {
                     //form field values set in on open of feature dialog
@@ -1641,6 +1663,31 @@ function EditorApp(appConfigObj) {
                         _this._isDragging = false;
                     }
                 };
+
+                //show a feature selection on the map on li single click
+                this._subLayersClick = function (event) {
+                    //clear feature selection layer
+                    _this.featureSelectionLayer.clearLayers();
+
+                    //remove selected flag from any li elements
+                    $('.feature-selection-li').removeClass('feature-selection-li');
+
+                    //add selected flag to 'this' li element
+                    $(this).addClass('feature-selection-li');
+
+                    /*a feature with the same id as that of the li element is in the editable features collection
+                    Iterate to find the corresponding layer and add it to the feature selection layer
+                    using toGeoJSON on the layer containing the desired feature
+                    The transparent orange style is defined at featureSelectionLayer instantiation
+                     */
+                    var editableLayers = _this.editableFeatures.getLayers();
+                    for (var i = 0; i < editableLayers.length; i++){
+                        if (editableLayers[i].feature.properties.featureId === this.id){
+                            _this.featureSelectionLayer.addData(editableLayers[i].toGeoJSON());
+                            break;
+                        }
+                    }
+                };
             }
 
             /*remove and reapply listeners*/
@@ -1650,8 +1697,10 @@ function EditorApp(appConfigObj) {
             $accordionH3.click(_this._accordionh3click);
 
             //open feature dialog on li double click
+            //select feature on li single click
             $layerSortLi.off('dblclick', this._subLayersDblClick);
-            $layerSortLi.dblclick(this._subLayersDblClick);
+            $layerSortLi.off('click', this._subLayersClick);
+            $layerSortLi.dblclick(this._subLayersDblClick).click(this._subLayersClick);
 
             //initialize sortable on feature sub items
             $(".layer-sort").sortable({axis: "y"});
@@ -1689,8 +1738,12 @@ function EditorApp(appConfigObj) {
             active: false,
             //identify the selected feature layer using the ui object returned on pane open/close
             activate: function (event, ui) {
-                //clear editable features
+                //clear editable and selected features
                 _this.editableFeatures.clearLayers();
+                _this.featureSelectionLayer.clearLayers();
+
+                //remove selection flag from any li elements
+                $('.feature-selection-li').removeClass('feature-selection-li');
 
                 //identify newly opened panel if there is one, all can be collapsed
                 //id retrieved from ui.newPanel.context.id

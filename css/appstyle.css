@@ -132,3 +132,9 @@ li hr, h3 hr {
 #legend-list{
     margin: 5px 0 7px 5px;
 }
+
+.feature-selection-li{
+    font-style: italic;
+    text-decoration: underline;
+    color: #FF8200 !important;
+}
