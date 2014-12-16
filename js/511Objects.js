@@ -911,7 +911,8 @@ function EditorApp(appConfigObj) {
                     _this.projectConfig.showLayers.trafficSpeed = $('#traffic-speed')[0].checked;
                     _this.projectConfig.showLayers.wrsSegments = $('#chk-wrs-segments')[0].checked;
                     $(this).dialog("close");
-                }
+                },
+                "Cancel": function () { $(this).dialog("close");}
             },
             open: function () {
                 //populate the check boxes with the current values
@@ -1027,7 +1028,8 @@ function EditorApp(appConfigObj) {
                         alert('something wrong');
                     }
                     $(this).dialog("close");
-                }
+                },
+                "Cancel": function () { $(this).dialog("close");}
             },
             open: function () {
                 _this.featureDialog.find('form')[0].reset();
@@ -1189,7 +1191,8 @@ function EditorApp(appConfigObj) {
                         //do nothing
                     }
                     $(this).dialog("close");
-                }
+                },
+                "Cancel": function () { $(this).dialog("close");}
             },
             open: function () {
                 _this.groupDialog.find('form')[0].reset();
